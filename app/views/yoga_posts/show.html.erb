@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Intention:</b>
+  <%= @yoga_post.intention %>
+</p>
+
+<p>
+  <b>Breath:</b>
+  <%= @yoga_post.breath %>
+</p>
+
+<p>
+  <b>Feeling:</b>
+  <%= @yoga_post.feeling %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @yoga_post.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_yoga_post_path(@yoga_post) %> |
+<%= link_to 'Back', yoga_posts_path %>

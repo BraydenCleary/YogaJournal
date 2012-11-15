@@ -1,0 +1,40 @@
+<%- model_class = User -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => "#{@user.name}'s Yoga Journal" %></h1>
+</div>
+
+<%= flash[:message] %>
+
+<dl class="dl-horizontal">
+  <dt><strong> My Yoga Posts:</strong></dt>
+  <dd>
+    <ul>
+      <% @user.yoga_posts.each do |yoga_post| %>
+       <li><%= link_to "#{yoga_post.created_at}", yoga_post_url(yoga_post.id) %></li>
+      <% end %>
+    <ul>
+  </dd>
+  <dt><strong> My Meditation Posts:</strong></dt>
+  <dd>
+    <ul>
+      <% @user.meditation_posts.each do |meditation_post| %>
+        <li><%= link_to "#{meditation_post.created_at}", meditation_post_url(meditation_post.id) %></li>
+      <% end %>
+    <ul>
+  </dd>
+  <dt><strong>My Reviewed Classes:</strong></dt>
+  <dd>
+  </dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              users_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_user_path(@user), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              user_path(@user),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

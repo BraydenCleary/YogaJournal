@@ -1,0 +1,29 @@
+<%= form_for(@meditation_post) do |f| %>
+  <% if @meditation_post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@meditation_post.errors.count, "error") %> prohibited this meditation_post from being saved:</h2>
+
+      <ul>
+      <% @meditation_post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :length %><br />
+    <%= f.text_field :length %>
+  </div>
+  <div class="field">
+    <%= f.label :breath %><br />
+    <%= f.text_area :breath %>
+  </div>
+  <div class="field">
+    <%= f.label :feeling %><br />
+    <%= f.text_area :feeling %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Length:</b>
+  <%= @meditation_post.length %>
+</p>
+
+<p>
+  <b>Breath:</b>
+  <%= @meditation_post.breath %>
+</p>
+
+<p>
+  <b>Feeling:</b>
+  <%= @meditation_post.feeling %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @meditation_post.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_meditation_post_path(@meditation_post) %> |
+<%= link_to 'Back', meditation_posts_path %>

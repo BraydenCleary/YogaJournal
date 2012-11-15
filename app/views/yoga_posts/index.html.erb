@@ -1,0 +1,29 @@
+<h1>Listing yoga_posts</h1>
+
+<table>
+  <tr>
+    <th>Intention</th>
+    <th>Breath</th>
+    <th>Feeling</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @yoga_posts.each do |yoga_post| %>
+  <tr>
+    <td><%= yoga_post.intention %></td>
+    <td><%= yoga_post.breath %></td>
+    <td><%= yoga_post.feeling %></td>
+    <td><%= yoga_post.user_id %></td>
+    <td><%= link_to 'Show', yoga_post %></td>
+    <td><%= link_to 'Edit', edit_yoga_post_path(yoga_post) %></td>
+    <td><%= link_to 'Destroy', yoga_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Yoga post', new_yoga_post_path %>

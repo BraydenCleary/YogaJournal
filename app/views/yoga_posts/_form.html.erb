@@ -1,0 +1,29 @@
+<%= form_for(@yoga_post) do |f| %>
+  <% if @yoga_post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@yoga_post.errors.count, "error") %> prohibited this yoga_post from being saved:</h2>
+
+      <ul>
+      <% @yoga_post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :intention %><br />
+    <%= f.text_area :intention %>
+  </div>
+  <div class="field">
+    <%= f.label :breath %><br />
+    <%= f.text_area :breath %>
+  </div>
+  <div class="field">
+    <%= f.label :feeling %><br />
+    <%= f.text_area :feeling %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

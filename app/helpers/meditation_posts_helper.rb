@@ -1,0 +1,2 @@
+module MeditationPostsHelper
+end

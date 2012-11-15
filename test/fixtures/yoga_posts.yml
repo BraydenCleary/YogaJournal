@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  intention: MyText
+  breath: MyText
+  feeling: MyText
+  user_id: 1
+
+two:
+  intention: MyText
+  breath: MyText
+  feeling: MyText
+  user_id: 1

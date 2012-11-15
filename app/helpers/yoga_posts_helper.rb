@@ -1,0 +1,2 @@
+module YogaPostsHelper
+end
