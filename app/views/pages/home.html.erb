@@ -5,6 +5,16 @@ mindfullness through yoga <br />
  jounrey by <%= link_to 'signing up now', new_user_url %>. <br />
    Namaste.</p>
 
+<div class='yoga_picture'>
+<%= image_tag 'yoga.jpeg' %>
+</div>
 
+<%= form_tag("/search", :method => 'get' ) do %>
+	<%= label_tag(:yoga, "Search Yoga:") %>
+	<%= text_field_tag(:yoga) %>
 
+	<%= label_tag(:zipcode, "Enter Zipcode:") %>
+	<%= text_field_tag(:zipcode) %>
 
+	<%= submit_tag("Search") %>
+<% end %>

@@ -11,6 +11,7 @@ YogaJournal::Application.routes.draw do
 
   root to: 'pages#home'
 
+  get '/search' => 'yelp#index'
   get '/sessions/new' => "sessions#new"
   post '/sessions' => "sessions#create"
   get '/sessions/destroy' => "sessions#destroy"
