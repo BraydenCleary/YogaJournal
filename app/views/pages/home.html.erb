@@ -2,19 +2,21 @@
 to document your path towards <br />
 mindfullness through yoga <br />
  and meditation.  Begin your <br />
- jounrey by <%= link_to 'signing up now', new_user_url %>. <br />
+ journey by <%= link_to 'signing up now', new_user_url %>. <br />
    Namaste.</p>
 
 <div class='yoga_picture'>
-<%= image_tag 'yoga.jpeg' %>
+	<%= image_tag 'yoga.jpeg' %>
 </div>
 
+<div>
 <%= form_tag("/search", :method => 'get' ) do %>
-	<%= label_tag(:yoga, "Search Yoga:") %>
-	<%= text_field_tag(:yoga) %>
+	<%= label_tag(:yoga, "Search Yoga Studios on Yelp:") %>
+	<%= text_field_tag(:yoga, 'Yoga Studio') %>
 
 	<%= label_tag(:zipcode, "Enter Zipcode:") %>
 	<%= text_field_tag(:zipcode) %>
 
 	<%= submit_tag("Search") %>
 <% end %>
+</div>
