@@ -1,23 +1,32 @@
-<p class='welcome'>Welcome!  Use My Yoga Journal <br />
-to document your path towards <br />
-mindfullness through yoga <br />
- and meditation.  Begin your <br />
- journey by <%= link_to 'signing up now', new_user_url %>. <br />
-   Namaste.</p>
-
-<div class='yoga_picture'>
-	<%= image_tag 'yoga.jpeg' %>
+<% if session[:user_id] %>
+<div class='welcome'>
+	Welcome, <%= @user.name %>! Be <br />
+	sure to take some time to be <br />
+	mindful today and reflect on the <br />
+	gift that is life...
 </div>
-
-<div class='yelp_search'>
-<%= form_tag("/search", :method => 'get' ) do %>
-
-	<%= label_tag(:yoga, "Search Yoga Studios on Yelp:") %>
-	<%= text_field_tag(:yoga, 'Yoga Studio') %>
-
-	<%= label_tag(:zipcode, "Enter Zipcode:") %>
-	<%= text_field_tag(:zipcode) %><br />
-
-	<%= submit_tag("Search") %>
+<% else %>
+	<p class='welcome'>Welcome!  Use My Yoga Journal <br />
+	to document your path towards <br />
+	mindfullness through yoga <br />
+ 	and meditation.  Begin your <br />
+ 	journey by <%= link_to 'signing up now', new_user_url %>. <br />
+  Namaste.</p>
 <% end %>
-</div>
+
+	<div class='yoga_picture'>
+		<%= image_tag 'yoga.jpeg' %>
+	</div>
+
+	<div class='yelp_search'>
+	<%= form_tag("/search", :method => 'get' ) do %>
+
+		<%= label_tag(:yoga, "Search Yoga Studios on Yelp:") %>
+		<%= text_field_tag(:yoga, 'Yoga Studio') %>
+
+		<%= label_tag(:zipcode, "Enter Zipcode:") %>
+		<%= text_field_tag(:zipcode) %><br />
+
+		<%= submit_tag("Search") %>
+	<% end %>
+	</div>

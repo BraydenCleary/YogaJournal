@@ -1,5 +1,8 @@
 <% if session[:user_id] %>
-	<h1>New Yoga Journal Entry</h1>
+	<h1>New Yoga Journal Entry</h1><br />
+	<div class='sitting'>
+		<%= image_tag 'sitting.jpeg' %>
+	</div>
 	<%= render 'form' %>
 <% else %>
 	<h1>Please Sign Up</h1>

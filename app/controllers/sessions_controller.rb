@@ -8,7 +8,7 @@ def create
 	if user && user.authenticate(params[:password])
 		session[:user_id] = user.id
 		flash[:message] = "Welcome, #{user.name}!"
-		redirect_to user_url(user.id)
+		redirect_to root_url
 	else
 		render 'new'
 	end

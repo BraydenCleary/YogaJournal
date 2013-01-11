@@ -17,11 +17,8 @@
         <span class="icon-bar"></span>
       </a>
 
-      <% if session[:user_id].present? %>
-        <a class="brand" <%= link_to 'My Yoga Journal', user_url(session[:user_id]) %></a>
-      <% else %>
        <a class="brand" <%= link_to 'My Yoga Journal', root_url %></a>
-      <% end %>
+
  
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse">
