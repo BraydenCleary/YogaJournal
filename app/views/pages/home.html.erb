@@ -1,4 +1,4 @@
-<p style="color: black; font-weight: bold; font-size: 20px">Welcome!  Use My Yoga Journal <br />
+<p class='welcome'>Welcome!  Use My Yoga Journal <br />
 to document your path towards <br />
 mindfullness through yoga <br />
  and meditation.  Begin your <br />
@@ -9,13 +9,14 @@ mindfullness through yoga <br />
 	<%= image_tag 'yoga.jpeg' %>
 </div>
 
-<div>
+<div class='yelp_search'>
 <%= form_tag("/search", :method => 'get' ) do %>
+
 	<%= label_tag(:yoga, "Search Yoga Studios on Yelp:") %>
 	<%= text_field_tag(:yoga, 'Yoga Studio') %>
 
 	<%= label_tag(:zipcode, "Enter Zipcode:") %>
-	<%= text_field_tag(:zipcode) %>
+	<%= text_field_tag(:zipcode) %><br />
 
 	<%= submit_tag("Search") %>
 <% end %>
