@@ -5,36 +5,40 @@
 
 <%= flash[:message] %>
 
-<dl class="dl-horizontal">
-  <dt><strong> My Yoga Posts:</strong></dt>
-  <dd>
-    <ul>
-      <% @user.yoga_posts.each do |yoga_post| %>
-       <li><%= link_to "#{yoga_post.created_at}", yoga_post_url(yoga_post.id) %></li>
-      <% end %>
-    <ul>
-  </dd>
-  <dt><strong> My Meditation Posts:</strong></dt>
-  <dd>
-    <ul>
-      <% @user.meditation_posts.each do |meditation_post| %>
-        <li><%= link_to "#{meditation_post.created_at}", meditation_post_url(meditation_post.id) %></li>
-      <% end %>
-    <ul>
-  </dd>
-  <dt><strong>My Reviewed Classes:</strong></dt>
-  <dd>
-  </dd>
-</dl>
+<table class="dl-horizontal">
+  <tr>
+    <td><strong> My Yoga Posts:</strong></td>
+    <td>
+      <ul>
+        <% @user.yoga_posts.each do |yoga_post| %>
+         <li><%= link_to "#{yoga_post.intention}, #{yoga_post.created_at}", yoga_post_url(yoga_post.id) %></li>
+        <% end %>
+      <ul>
+    </td>
+  </tr> 
+  <tr>
+    <td><strong> My Meditation Posts:</strong></td>
+    <td>
+      <ul>
+        <% @user.meditation_posts.each do |meditation_post| %>
+          <li><%= link_to "#{meditation_post.title}, #{meditation_post.created_at}", meditation_post_url(meditation_post.id) %></li>
+        <% end %>
+      <ul>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>My Reviewed Classes:</strong></td>
+    <td>
+      <ul>
+        <% @user.reviews.each do |review| %>
+          <li><%= link_to "#{review.created_at}", reivew_url(review.id) %></li>
+        <% end %>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 <div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              users_path, :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_user_path(@user), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              user_path(@user),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
 </div>

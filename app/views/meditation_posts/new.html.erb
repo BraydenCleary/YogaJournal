@@ -1,5 +1,9 @@
-<h1>New Meditation Journal Entry</h1>
+<% if session[:user_id] %>
+	<h1>New Meditation Journal Entry</h1>
+	<%= render 'form' %>
+<% else %>
+	<h1>Please Sign Up</h1>
+  <p>To make a reservation here, please <%= link_to "sign up for an account", new_user_url %></p>
+<% end %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', meditation_posts_path %>
+<%= link_to 'Home', root_url %>

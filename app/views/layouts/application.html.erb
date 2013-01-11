@@ -26,10 +26,10 @@
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse">
         <ul class="nav">
-        	<li><%= link_to "New Yoga Entry", new_yoga_post_url %></li>
-          <li><%= link_to "New Meditation Entry", new_meditation_post_url %></li>
+        	<li><%= link_to "New Yoga Post", new_yoga_post_url %></li>
+          <li><%= link_to "New Meditation Post", new_meditation_post_url %></li>
           <li><%= link_to "New Class Review", new_review_url %></li>
-          <li><%= link_to "Discover Yoga Teachers", teachers_url %></li>
+          <li><%= link_to "Your Yoga Teachers", teachers_url %></li>
           <% if session[:user_id].present? %>
             <li><%= link_to "Sign Out", sessions_destroy_url %></li>
             <li><%= link_to "My Profile", user_url(session[:user_id]) %></li>

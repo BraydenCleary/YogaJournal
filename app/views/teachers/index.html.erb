@@ -1,25 +1,29 @@
-<h1>Listing teachers</h1>
+<% if session[:user_id] %>
+  <h1>New Yoga Journal Entry</h1>
+  <h1>Your Yoga Teachers</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Picture</th>
-    <th>Biography</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <table>
+    <tr>
+      <th>Name</th> 
+      <th>Picture</th>
+      <th>Biography</th>
+    </tr>
 
-<% @teachers.each do |teacher| %>
-  <tr>
-    <td><%= teacher.name %></td>
-    <td><%= image_tag teacher.image_url %></td>
-    <td><%= teacher.biography %></td>
-    <td><%= link_to 'Show', teacher %></td>
-  </tr>
+    <% @teachers.each do |teacher| %>
+      <tr>
+        <td><%= teacher.name %></td>
+        <td><%= image_tag teacher.image_url %></td>
+        <td><%= teacher.biography %></td>
+        <td><%= link_to 'Show', teacher %></td>
+      </tr>
+    <% end %>
+
+  </table>
+
+<% else %>
+  <h1>Please Sign Up</h1>
+  <p>To make a reservation here, please <%= link_to "sign up for an account", new_user_url %></p>
 <% end %>
-</table>
 
-<br />
+<%= link_to 'Home', root_url %>
 
-<%= link_to 'New Teacher', new_teacher_path %>

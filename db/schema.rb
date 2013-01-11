@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121228205612) do
+ActiveRecord::Schema.define(:version => 20130111163931) do
 
   create_table "meditation_posts", :force => true do |t|
     t.string   "length"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20121228205612) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.date     "date"
+    t.string   "title"
   end
 
   create_table "reviews", :force => true do |t|
