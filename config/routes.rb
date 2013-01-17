@@ -12,9 +12,13 @@ YogaJournal::Application.routes.draw do
   root to: 'pages#home'
 
   get '/search' => 'yelp#index'
+
   get '/sessions/new' => "sessions#new"
   post '/sessions' => "sessions#create"
   get '/sessions/destroy' => "sessions#destroy"
+
+  get '/about' => 'pages#about', :as => 'about'
+  get '/resources' => 'pages#resources', :as => 'resources'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
